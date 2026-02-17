@@ -4,3 +4,9 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+burn = { version = "0.20.1", features = ["ndarray", "dataset", "vision"] }
+burn-store = { version = "0.20.1", features = ["std", "burnpack"] }
+serde = "1.0.228"
+
+[build-dependencies]
+burn-onnx = "0.21.0-pre.1"
