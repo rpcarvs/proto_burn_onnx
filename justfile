@@ -15,12 +15,15 @@ fmt:
 lint:
     cargo clippy --all-targets --all-features -- -D warnings
 
+# use cargo audit from rustsec to find vulnerabilities
 audit:
     cargo audit
 
+# use the mozilla cargo vet to protect from supply-chain attacks
 vet:
     cargo vet
 
+# run fmt, lint, audit and vet
 ci: fmt lint audit vet
 
 release: ci
@@ -29,5 +32,6 @@ release: ci
 clean:
     cargo clean
 
+# bump version (patch, minor, major)
 bump kind="patch":
     cargo set-version --bump {{ kind }}
